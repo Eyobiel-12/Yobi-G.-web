@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import { translations } from '../translations';
 
 const LanguageContext = createContext();
@@ -12,7 +12,17 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguageState] = useState(() => {
+    // Try to get the language from localStorage
+    const savedLanguage = localStorage.getItem('language');
+    return savedLanguage || 'en';
+  });
+
+  // Wrapper for setLanguage that also updates localStorage
+  const setLanguage = (newLanguage) => {
+    setLanguageState(newLanguage);
+    localStorage.setItem('language', newLanguage);
+  };
 
   const t = (path) => {
     const translatedValue = path.split('.').reduce((obj, key) => obj?.[key], translations[language]);

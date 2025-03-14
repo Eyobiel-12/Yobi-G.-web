@@ -600,8 +600,8 @@ export const translations = {
       contact: 'ያግኙን'
     },
     hero: {
-      title: 'የዲጂታል ልህቀት ምፍጣር',
-      subtitle: 'ራእይኹም፣ ክእለትና - ኣገደስቲ ዲጂታላዊ መፍትሒታት ምህናጽ',
+      title: 'የዲጂታል ልህቀት መፍጠር',
+      subtitle: 'እርስዎ ራእይ፣ እኛ ክህሎት - ጠቃሚ ዲጂታል መፍትሄዎችን መገንባት',
       cta: 'ጀምር'
     },
     services: {
@@ -611,16 +611,16 @@ export const translations = {
         description: 'ዘመናዊ ቴክኖሎጂዎችን እና ምርጥ ልምዶችን በመጠቀም የተገነቡ ብጁ ድረ-ገጾች እና የድር መተግበሪያዎች።'
       },
       ecommerce: {
-        title: 'የኢ-ኮሜርስ መድረክ',
-        description: 'ውሑስ ኣከፋፍላ ክፍሊትን ምሕደራ ቀረብን ዘለዎም ሓያላት መስመር ኦንላይን መደብራት።'
+        title: 'የኢ-ኮሜርስ መፍትሄዎች',
+        description: 'ደህንነቱ የተጠበቀ የክፍያ ሂደት እና የእቃ ክምችት አያያዝ ያላቸው ጠንካራ የመስመር ላይ መደብሮች።'
       },
       webDesign: {
-        title: 'ዲዛይን ወብ',
-        description: 'ፍሉይ ተመኩሮ ተጠቃሚ ዝህቡ ጽቡቓት፣ ምላሽ ዝህቡ ንድፊታት።'
+        title: 'የድር ዲዛይን',
+        description: 'ልዩ የተጠቃሚ ተሞክሮ የሚሰጡ ውብ እና ምላሽ ሰጪ ንድፎች።'
       },
       seo: {
-        title: 'SEO ማሻሻያ',
-        description: 'ኦንላይን ርኢቶኹም ኣመሓይሹ ንዝበዝሑ ዓማዊል ብጽሑ።'
+        title: 'ኤስኢኦ ማሻሻያ',
+        description: 'የመስመር ላይ ታይታዎን አሻሽለው ተጨማሪ ደንበኞችን ያግኙ።'
       }
     },
     portfolio: {
@@ -915,8 +915,8 @@ export const translations = {
         description: 'ፍሉይ ተመኩሮ ተጠቃሚ ዝህቡ ጽቡቓት፣ ምላሽ ዝህቡ ንድፊታት።'
       },
       seo: {
-        title: 'SEO ማሻሻያ',
-        description: 'ኦንላይን ርኢቶኹም ኣመሓይሹ ንዝበዝሑ ዓማዊል ብጽሑ።'
+        title: 'ምምሕያሽ ኤስኢኦ',
+        description: 'ኣብ መስመር ዘለኩም ተራእይነት ኣመሓይሹ ንዝበዝሑ ዓማዊል ብጽሑ።'
       }
     },
     portfolio: {
