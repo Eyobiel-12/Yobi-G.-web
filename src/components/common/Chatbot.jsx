@@ -33,9 +33,8 @@ import {
 } from './ChatbotStyles';
 import Picker from '@emoji-mart/react';
 import data from '@emoji-mart/data';
-import { FiMic, FiMicOff, FiGlobe, FiUser, FiArrowRight, FiPaperclip, FiSend, FiX, FiMessageSquare, FiFile, FiSmile, FiPhone } from 'react-icons/fi';
+import { FiMic, FiMicOff, FiUser, FiArrowRight, FiPaperclip, FiSend, FiX, FiMessageSquare, FiFile, FiSmile, FiPhone } from 'react-icons/fi';
 import { useLanguage } from '../../context/LanguageContext';
-import { useNavigate } from 'react-router-dom';
 
 const Chatbot = () => {
   const { language, t } = useLanguage();
@@ -48,7 +47,6 @@ const Chatbot = () => {
   const [isListening, setIsListening] = useState(false);
   const messagesEndRef = useRef(null);
   const fileInputRef = useRef(null);
-  const navigate = useNavigate();
 
   // Initial suggestions
   const initialSuggestions = useMemo(() => [
@@ -171,6 +169,7 @@ const Chatbot = () => {
       response = t('chatbot.responses.services');
     } else if (lowerInput.includes('price') || lowerInput.includes('cost')) {
       response = t('chatbot.responses.pricing');
+      showCallButton = true;
     } else if (lowerInput.includes('portfolio') || lowerInput.includes('example')) {
       response = t('chatbot.responses.portfolio');
     } else if (lowerInput.includes('contact') || lowerInput.includes('speak') || lowerInput.includes('talk') || 
@@ -218,15 +217,18 @@ const Chatbot = () => {
     
     // Determine response based on suggestion
     let response = t('chatbot.responses.fallback');
+    let showCallButton = false;
     
     if (suggestion === t('chatbot.suggestions.services')) {
       response = t('chatbot.responses.services');
     } else if (suggestion === t('chatbot.suggestions.pricing')) {
       response = t('chatbot.responses.pricing');
+      showCallButton = true;
     } else if (suggestion === t('chatbot.suggestions.portfolio')) {
       response = t('chatbot.responses.portfolio');
     } else if (suggestion === t('chatbot.suggestions.contact')) {
       response = t('chatbot.responses.contact');
+      showCallButton = true;
     }
     
     // Add bot response after delay
@@ -236,7 +238,8 @@ const Chatbot = () => {
         id: (Date.now() + 1).toString(),
         sender: 'bot',
         text: response,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        showCallButton: showCallButton
       }]);
       
       // Show suggestions again after a delay
@@ -382,13 +385,6 @@ const Chatbot = () => {
                   <FiMessageSquare /> {t('chatbot.title')}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div onClick={() => navigate('/language')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                    <FiGlobe />
-                    {language === 'en' && <span style={{ marginLeft: '4px' }}>🇬🇧</span>}
-                    {language === 'nl' && <span style={{ marginLeft: '4px' }}>🇳🇱</span>}
-                    {language === 'am' && <span style={{ marginLeft: '4px' }}>🇪🇹</span>}
-                    {language === 'ti' && <span style={{ marginLeft: '4px' }}>🇪🇷</span>}
-                  </div>
                   <CloseButton onClick={() => setIsOpen(false)}>
                     <FiX />
                   </CloseButton>

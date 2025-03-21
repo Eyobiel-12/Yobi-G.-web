@@ -414,7 +414,7 @@ const Services = ({ openGetStartedModal }) => {
         >
           <HeaderAccent />
           <SectionTitle>{t('services.title')}</SectionTitle>
-          <SectionSubtitle>{t('services.subtitle') || 'Professional solutions for your digital needs'}</SectionSubtitle>
+          <SectionSubtitle>{t('services.subtitle')}</SectionSubtitle>
           <HeaderLine />
         </SectionHeaderContainer>
         

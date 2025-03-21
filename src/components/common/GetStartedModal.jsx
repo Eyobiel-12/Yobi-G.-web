@@ -888,9 +888,20 @@ const ConsultationButton = styled(motion.a)`
   }
 `;
 
+const PricingNote = styled.div`
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #92400e;
+`;
+
 // Updated GetStartedModal component to use translations
 const GetStartedModal = ({ isOpen, onClose }) => {
-  const { t, language, setLanguage } = useLanguage();
+  const { t, language } = useLanguage();
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [errors, setErrors] = useState({});
@@ -898,20 +909,10 @@ const GetStartedModal = ({ isOpen, onClose }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [files, setFiles] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   const [showConsultationOption, setShowConsultationOption] = useState(false);
   const fileInputRef = useRef(null);
-  const languageDropdownRef = useRef(null);
-
-  // Language options
-  const languageOptions = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
-    { code: 'am', name: 'አማርኛ', flag: '🇪🇹' },
-    { code: 'ti', name: 'ትግርኛ', flag: '🇪🇷' }
-  ];
 
   // Load saved form data when modal opens
   useEffect(() => {
@@ -955,20 +956,6 @@ const GetStartedModal = ({ isOpen, onClose }) => {
       console.error('Error clearing saved form data:', error);
     }
   };
-
-  // Close language dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
-        setShowLanguageDropdown(false);
-      }
-    };
-    
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   const handleAnswer = (questionId, answer) => {
     setErrors(prev => ({ ...prev, [questionId]: null }));
@@ -1049,6 +1036,12 @@ const GetStartedModal = ({ isOpen, onClose }) => {
             exit={{ opacity: 0, y: -20 }}
           >
             <h3>{t(`getStartedModal.steps.${currentQuestion.id}.question`)}</h3>
+            
+            {currentQuestion.id === 'projectType' && (
+              <PricingNote>
+                <strong>📝 Note about pricing:</strong> Our pricing is completely customized based on your specific project requirements and goals. For the most accurate quote and quickest assistance, please contact Eyobiel Goitom directly at +31687033774.
+              </PricingNote>
+            )}
             
             <SelectWrapper>
               {t(`getStartedModal.steps.${currentQuestion.id}.options`, { returnObjects: true }).map((option) => (
@@ -1514,42 +1507,6 @@ const GetStartedModal = ({ isOpen, onClose }) => {
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           >
-            <LanguageSelector ref={languageDropdownRef}>
-              <LanguageButton
-                onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <FiGlobe />
-                <span>{languageOptions.find(option => option.code === language)?.flag}</span>
-              </LanguageButton>
-              
-              <AnimatePresence>
-                {showLanguageDropdown && (
-                  <LanguageDropdown
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {languageOptions.map((option) => (
-                      <LanguageOption
-                        key={option.code}
-                        className={language === option.code ? 'active' : ''}
-                        onClick={() => {
-                          setLanguage(option.code);
-                          setShowLanguageDropdown(false);
-                        }}
-                      >
-                        <FlagIcon>{option.flag}</FlagIcon>
-                        <span>{option.name}</span>
-                      </LanguageOption>
-                    ))}
-                  </LanguageDropdown>
-                )}
-              </AnimatePresence>
-            </LanguageSelector>
-            
             <CloseButton onClick={handleClose}>✕</CloseButton>
             
             <h2 style={{ textAlign: 'center', marginBottom: '1rem', color: '#1e40af' }}>

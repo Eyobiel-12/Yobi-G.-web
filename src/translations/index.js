@@ -8,14 +8,15 @@ export const translations = {
       contact: 'Contact'
     },
     hero: {
-      title: 'Elevate Your Digital Presence',
-      subtitle: 'Dream It, We Build It: Empowering Your Digital Dominance',
+      title: 'Creating Digital Excellence',
+      subtitle: 'Your Vision, Our Expertise – Building Digital Solutions That Matter',
       cta: 'Get Started'
     },
     services: {
       title: 'Our Services',
+      subtitle: 'Professional solutions for your digital needs',
       webDevelopment: {
-        title: 'Web Development',
+        title: 'Professional Web Development',
         description: 'Custom websites and web applications built with modern technologies and best practices.'
       },
       ecommerce: {
@@ -158,11 +159,11 @@ export const translations = {
       },
       responses: {
         services: 'We offer web development, e-commerce solutions, web design, and SEO optimization. Would you like to know more about any specific service?',
-        pricing: 'Our pricing depends on the scope and requirements of your project. We offer competitive rates and flexible packages. Would you like to get a personalized quote?',
+        pricing: 'Our pricing is entirely customized based on your specific project requirements and goals. For an accurate quote, we strongly recommend speaking directly with Eyobiel Goitom at +31687033774. He can provide you with detailed pricing information tailored to your needs. Would you like his contact information?',
         portfolio: 'You can view our portfolio on our website. We have worked with various clients across different industries. Would you like me to show you some examples?',
-        contact: 'You can speak directly with Eyobiel Goitom, our Software Engineer, at +31687033774 or email us at info@ysm.com. Would you like to schedule a consultation?',
+        contact: 'For the fastest response and personalized assistance, please contact Eyobiel Goitom directly at +31687033774 or email us at info@ysm.com. Eyobiel can discuss your specific requirements and provide custom pricing information. Would you like to schedule a consultation?',
         fallback: "I'm not sure I understand. Could you please rephrase your question or select one of the suggested topics below?",
-        getStarted: "Great! You can speak directly with Eyobiel Goitom, our Software Engineer, at +31687033774 to discuss your project needs. He'll help you get started right away."
+        getStarted: "Great! For the most efficient way to start your project, please contact Eyobiel Goitom directly at +31687033774. He will discuss your specific requirements, provide custom pricing information, and help you get started immediately. Would you like to call now?"
       }
     },
     getStartedModal: {
@@ -315,6 +316,7 @@ export const translations = {
     },
     services: {
       title: 'Onze Diensten',
+      subtitle: 'Professionele oplossingen voor uw digitale behoeften',
       webDevelopment: {
         title: 'Professionele Webontwikkeling',
         description: 'Op maat gemaakte websites en applicaties gebouwd met moderne technologieën en best practices.'
@@ -603,19 +605,20 @@ export const translations = {
   },
   am: {
     nav: {
-      home: 'መነሻ ገጽ',
+      home: 'መነሻ',
       services: 'አገልግሎቶች',
-      portfolio: 'ስራዎቻችን',
-      reviews: 'ግብረ-መልሶች',
+      portfolio: 'ፖርትፎሊዮ',
+      reviews: 'አስተያየቶች',
       contact: 'አግኙን'
     },
     hero: {
-      title: 'የዲጂታል ልህቀት መፍጠር',
-      subtitle: 'እርስዎ ራእይ፣ እኛ ክህሎት - ጠቃሚ ዲጂታል መፍትሄዎችን መገንባት',
-      cta: 'እንጀምር'
+      title: 'ዲጂታል ብቃትን መፍጠር',
+      subtitle: 'ራዕይዎ፣ የኛ ምርጥ ችሎታ - ጠቃሚ የሆኑ ዲጂታል መፍትሄዎችን መገንባት',
+      cta: 'ይጀምሩ'
     },
     services: {
       title: 'አገልግሎቶቻችን',
+      subtitle: 'ለዲጂታል ፍላጎትዎ ሙያዊ መፍትሄዎች',
       webDevelopment: {
         title: 'ሙያዊ የድህረ ገጽ ልማት',
         description: 'በዘመናዊ ቴክኖሎጂዎችና በምርጥ አሰራሮች የተገነቡ ብጁ ድር ጣቢያዎች እና መተግበሪያዎች።'
@@ -904,19 +907,20 @@ export const translations = {
   },
   ti: {
     nav: {
-      home: 'መበገሲ',
+      home: 'መነሻ',
       services: 'ኣገልግሎታት',
-      portfolio: 'ስራሕና',
-      reviews: 'ርእይቶታት',
+      portfolio: 'ፖርትፎሊዮ',
+      reviews: 'ግምገማታት',
       contact: 'ርኸቡና'
     },
     hero: {
       title: 'ዲጂታላዊ ብልጫ ምፍጣር',
-      subtitle: 'ራእይኹም፣ ክእለትና - ኣገደስቲ ዲጂታላዊ መፍትሒታት ምህናጽ',
-      cta: 'ሕጂ ንጀምር'
+      subtitle: 'ራእይኹም፣ ክእለትና - ኣገደስቲ ዲጂታሊ መፍትሒታት ምህናጽ',
+      cta: 'ጀምር'
     },
     services: {
       title: 'ኣገልግሎታትና',
+      subtitle: 'ንዲጂታላዊ ድሌታትኩም ሞያዊ መፍትሒታት',
       webDevelopment: {
         title: 'ሞያዊ ምዕባለ ወብሳይት',
         description: 'ብዘመናዊ ቴክኖሎጂታትን ዝሓሸ ልምድታትን ዝተሃነጹ ብዓሚል ዝተዳለዉ ወብሳይታትን ኣፕሊኬሽናትን።'
