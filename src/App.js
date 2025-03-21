@@ -90,7 +90,7 @@ function App() {
             <Navbar onGetStartedClick={openGetStartedModal} />
             <main>
               <Hero onGetStartedClick={openGetStartedModal} />
-              <Services />
+              <Services openGetStartedModal={openGetStartedModal} />
               <Portfolio />
               <Reviews />
               <Contact onGetStartedClick={openGetStartedModal} />
